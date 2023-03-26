@@ -26,5 +26,7 @@ public class MainActivity extends AppCompatActivity {
         temperatureDataList.add(new TemperatureData("2023-03-26", 2.6, 9.6));
 
         recyclerView.setAdapter(new TemperatureDataAdapter(temperatureDataList));
+
+        new TemperatureDataFetcher(recyclerView).execute("https://api.open-meteo.com/v1/forecast?latitude=51.70&longitude=5.22&daily=temperature_2m_max,temperature_2m_min&timezone=Europe%2FLondon");
     }
 }
