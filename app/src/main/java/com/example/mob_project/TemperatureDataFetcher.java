@@ -87,6 +87,7 @@ public class TemperatureDataFetcher extends AsyncTask<String, Void, ArrayList<Te
     @Override
     protected void onPostExecute(ArrayList<TemperatureData> temperatureDataList){
         super.onPostExecute(temperatureDataList);
+
         this.recyclerView.setAdapter(new TemperatureDataAdapter(temperatureDataList));
     }
 }
